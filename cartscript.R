@@ -1,0 +1,8 @@
+library(rpart)
+library(rpart.plot)
+library(caTools)
+stevens <- read.csv("stevens.csv")
+set.seed(3000)
+split <- sample.split(stevens$Reverse, SplitRatio=.7)
+Test <- subset(stevens, split==FALSE)
+Train <- subset(stevens, split==TRUE)
